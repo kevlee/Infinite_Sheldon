@@ -21,18 +21,74 @@
         android:layout_weight="0.27"
         tools:ignore="UselessLeaf" >
 
+        <TextView
+            android:id="@+id/TextView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="225dp"
+            android:text="@string/Password"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/blanc" />
+
+        <EditText
+            android:id="@+id/PassWord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/TextView2"
+            android:layout_alignBottom="@+id/TextView2"
+            android:layout_alignLeft="@+id/editText1"
+            android:layout_alignParentRight="true"
+            android:ems="10"
+            android:hint="@string/hint_password"
+            android:inputType="textPassword" >
+
+            <requestFocus />
+        </EditText>
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/PassWord"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="21dp"
+            android:text="@string/username"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/blanc" />
+
+        <EditText
+            android:id="@+id/UserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textView1"
+            android:layout_alignBottom="@+id/textView1"
+            android:layout_alignParentRight="true"
+            android:ems="10"
+            android:hint="@string/hint_username" />
+
+        <TextView
+            android:id="@+id/Email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/PassWord"
+            android:layout_marginTop="41dp"
+            android:text="@string/email"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/blanc" />
+
         <EditText
             android:id="@+id/editText1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/Email"
+            android:layout_alignBottom="@+id/Email"
             android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginRight="49dp"
-            android:layout_marginTop="205dp"
-            android:ems="10" >
-
-            <requestFocus />
-        </EditText>
+            android:ems="10"
+            android:hint="@string/hint_email"
+            android:inputType="textEmailAddress" />
 
     </RelativeLayout>
 

@@ -1,15 +1,23 @@
 package fr.example.infinitesheldon;
 
-import android.os.Bundle;
 import android.app.Activity;
+import android.content.pm.ActivityInfo;
+import android.os.Bundle;
 import android.view.Menu;
+import android.widget.EditText;
 
 public class Sheldon extends Activity {
-
+	EditText username,password,email;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_sheldon);
+		// block l'orientation
+		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+		username = (EditText)findViewById(R.id.UserName);
+		password = (EditText)findViewById(R.id.PassWord);
+		email = (EditText)findViewById(R.id.Email);
 	}
 
 	@Override

@@ -6,5 +6,11 @@
     <string name="menu_settings">Settings</string>
     <color name="blanc">#ffffff</color>
     <string name="title">Bienvienu dans infinite Sheldon une app qui bat tous les voleurs</string>
+    <string name="username">Username</string>
+    <string name="hint_username">enter an username</string>
+    <string name="Password">Password</string>
+    <string name="hint_password">enter a password</string>
+    <string name="email">Email</string>
+    <string name="hint_email">entrez un email</string>
 
 </resources>
