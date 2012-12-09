@@ -19,6 +19,13 @@ public class Sheldon extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_sheldon);
 		// block l'orientation
+		SharedPreferences preferences = getSharedPreferences("sheldon_pref", Context.MODE_PRIVATE);
+		if (!preferences.getAll().isEmpty()){
+			Intent intent = new Intent(this, Watchman.class);
+			startActivity(intent);
+			this.finish();
+		}
+		// block l'orientation
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		username = (EditText)findViewById(R.id.UserName);
 		password = (EditText)findViewById(R.id.PassWord);
@@ -40,12 +47,11 @@ public class Sheldon extends Activity {
 			preferences.edit().putString("Password",password.getText().toString());
 			preferences.edit().putString("Email",email.getText().toString());
 			preferences.edit().putString("alarm","fasle");
-		}else{
-			
+			Intent intent = new Intent(this, Watchman.class);
+			startActivity(intent);
+			this.finish();
 		}
-		Intent intent = new Intent(this, Watchman.class);
-		startActivity(intent);
-		this.finish();
+		
 		
 	}
 

@@ -5,4 +5,67 @@
     android:background="@drawable/sheldon"
     tools:context=".Watchman" >
 
+    <Button
+        android:id="@+id/stopapp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="33dp"
+        android:height="30dp"
+        android:onClick="onclickstopapp"
+        android:text="@string/buttontext"
+        android:width="150dp" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/UserName"
+        android:layout_alignBottom="@+id/UserName"
+        android:layout_alignLeft="@+id/TextView2"
+        android:text="@string/username"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/blanc" />
+
+    <TextView
+        android:id="@+id/TextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/PassWord"
+        android:layout_alignBottom="@+id/PassWord"
+        android:layout_alignParentLeft="true"
+        android:text="@string/Password"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/blanc" />
+
+    <EditText
+        android:id="@+id/PassWord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/stopapp"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="64dp"
+        android:ems="10"
+        android:hint="@string/hint_password"
+        android:inputType="textPassword"
+        android:overScrollMode="never"
+        tools:ignore="UnknownIdInLayout" />
+
+    <EditText
+        android:id="@+id/UserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/PassWord"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="25dp"
+        android:ems="10"
+        android:hint="@string/hint_username"
+        android:overScrollMode="never"
+        android:scrollHorizontally="false"
+        android:scrollbarAlwaysDrawVerticalTrack="false" >
+
+        <requestFocus />
+    </EditText>
+
 </RelativeLayout>
