@@ -3,12 +3,15 @@
     package="fr.example.infinitesheldon"
     android:versionCode="1"
     android:versionName="1.0" >
-    
-    <uses-sdk android:targetSdkVersion="10" android:minSdkVersion="10"/>
-    <uses-permission android:name="android.permission.READ_SMS"/>
-    <uses-permission android:name="android.permission.SEND_SMS"/>
-    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
 
+    <uses-sdk
+        android:minSdkVersion="10"
+        android:targetSdkVersion="10" />
+
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.PERSISTENT_ACTIVITY" />
 
     <application
         android:allowBackup="true"
@@ -23,6 +26,10 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="fr.example.infinitesheldon.Watchman"
+            android:label="@string/title_activity_watchman" >
         </activity>
     </application>
 

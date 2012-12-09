@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.27"
-        tools:ignore="UselessLeaf" >
+        tools:ignore="UselessLeaf,InefficientWeight" >
 
         <TextView
             android:id="@+id/TextView2"
@@ -42,7 +42,9 @@
             android:layout_alignParentRight="true"
             android:ems="10"
             android:hint="@string/hint_password"
-            android:inputType="textPassword" >
+            android:inputType="textPassword"
+            android:overScrollMode="never"
+            tools:ignore="UnknownIdInLayout" >
 
             <requestFocus />
         </EditText>
@@ -66,10 +68,13 @@
             android:layout_alignBottom="@+id/textView1"
             android:layout_alignParentRight="true"
             android:ems="10"
-            android:hint="@string/hint_username" />
+            android:hint="@string/hint_username"
+            android:overScrollMode="never"
+            android:scrollHorizontally="false"
+            android:scrollbarAlwaysDrawVerticalTrack="false" />
 
         <TextView
-            android:id="@+id/Email"
+            android:id="@+id/TextView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -79,16 +84,29 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@color/blanc" />
 
-        <EditText
-            android:id="@+id/editText1"
+        <Button
+            android:id="@+id/startapp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/Email"
-            android:layout_alignBottom="@+id/Email"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="45dp"
+            android:height="30dp"
+            android:onClick="onclicksheldon"
+            android:text="@string/buttontext"
+            android:width="150dp" />
+
+        <EditText
+            android:id="@+id/Email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/TextView3"
+            android:layout_alignBottom="@+id/TextView3"
             android:layout_alignParentRight="true"
             android:ems="10"
             android:hint="@string/hint_email"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:overScrollMode="never" />
 
     </RelativeLayout>
 
