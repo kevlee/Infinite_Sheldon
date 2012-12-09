@@ -21,44 +21,30 @@
         android:layout_weight="0.27"
         tools:ignore="UselessLeaf,InefficientWeight" >
 
-        <TextView
-            android:id="@+id/TextView2"
+        <Button
+            android:id="@+id/startapp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_marginBottom="225dp"
-            android:text="@string/Password"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@color/blanc" />
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="45dp"
+            android:height="30dp"
+            android:onClick="onclicksheldon"
+            android:text="@string/buttontext"
+            android:width="150dp" />
 
         <EditText
             android:id="@+id/PassWord"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/TextView2"
-            android:layout_alignBottom="@+id/TextView2"
-            android:layout_alignLeft="@+id/editText1"
+            android:layout_above="@+id/startapp"
             android:layout_alignParentRight="true"
+            android:layout_marginBottom="78dp"
             android:ems="10"
             android:hint="@string/hint_password"
             android:inputType="textPassword"
             android:overScrollMode="never"
-            tools:ignore="UnknownIdInLayout" >
-
-            <requestFocus />
-        </EditText>
-
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/PassWord"
-            android:layout_alignParentLeft="true"
-            android:layout_marginBottom="21dp"
-            android:text="@string/username"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@color/blanc" />
+            tools:ignore="UnknownIdInLayout" />
 
         <EditText
             android:id="@+id/UserName"
@@ -74,39 +60,48 @@
             android:scrollbarAlwaysDrawVerticalTrack="false" />
 
         <TextView
-            android:id="@+id/TextView3"
+            android:id="@+id/TextView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/PassWord"
-            android:layout_marginTop="41dp"
-            android:text="@string/email"
+            android:layout_alignBaseline="@+id/PassWord"
+            android:layout_alignBottom="@+id/PassWord"
+            android:layout_alignRight="@+id/textView1"
+            android:text="@string/Password"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@color/blanc" />
-
-        <Button
-            android:id="@+id/startapp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="45dp"
-            android:height="30dp"
-            android:onClick="onclicksheldon"
-            android:text="@string/buttontext"
-            android:width="150dp" />
 
         <EditText
             android:id="@+id/Email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/TextView3"
-            android:layout_alignBottom="@+id/TextView3"
             android:layout_alignParentRight="true"
+            android:layout_below="@+id/TextView2"
+            android:layout_marginTop="22dp"
             android:ems="10"
             android:hint="@string/hint_email"
             android:inputType="textEmailAddress"
             android:overScrollMode="never" />
+
+        <TextView
+            android:id="@+id/TextView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/Email"
+            android:layout_alignBottom="@+id/Email"
+            android:layout_alignLeft="@+id/TextView2"
+            android:text="@string/email"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/blanc" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/startapp"
+            android:text="@string/username"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/blanc" />
 
     </RelativeLayout>
 

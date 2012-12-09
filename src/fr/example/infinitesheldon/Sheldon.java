@@ -38,12 +38,14 @@ public class Sheldon extends Activity {
 			Log.i("preferences","preferences null");
 			preferences.edit().putString("Login",username.getText().toString());
 			preferences.edit().putString("Password",password.getText().toString());
-			preferences.edit().putString("email",email.getText().toString());
+			preferences.edit().putString("Email",email.getText().toString());
+			preferences.edit().putString("alarm","fasle");
 		}else{
 			
 		}
 		Intent intent = new Intent(this, Watchman.class);
 		startActivity(intent);
+		this.finish();
 		
 	}
 
