@@ -10,6 +10,7 @@ import android.location.LocationManager;
 import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
@@ -42,8 +43,11 @@ public class Watchman extends Activity {
 	
 	public void onclickstopapp(View v){
 		SharedPreferences preferences = getSharedPreferences("sheldon_pref", Context.MODE_PRIVATE);
-		if(username.getText().toString() == preferences.getString("Login", "test") && 
-		   password.getText().toString() == preferences.getString("Password", "test")){
+		if (preferences.getAll().isEmpty()){
+			Log.i("sharedpref","empty");
+		}
+		if(username.getText().toString().equals(preferences.getString("Login", "test")) && 
+		   password.getText().toString().equals(preferences.getString("Password", "test"))){
 			pl.cancel(true);
 		}
 	}
@@ -93,23 +97,23 @@ public class Watchman extends Activity {
 	    	}
 	    	mPlayer = MediaPlayer.create(mycontext,idalarm);
 	    	mPlayer.start();
+	    	while(mPlayer.isPlaying());
 		 }
 		 
 		protected Void doInBackground(Context... params) {
 			mycontext = params[0];
-			playalarm(R.raw.sir);
+			while(true){
+				playalarm(R.raw.sir);
+				if (this.isCancelled())
+					break;
+			}
 			return null;
 		}
 		
 		protected void onCancelled(){
 			mPlayer.stop();
-			return;
 		}
 		
-		protected void onPostExecute(final Void unused){
-			mPlayer.stop();
-			return;
-		}
 	 }
 
 
