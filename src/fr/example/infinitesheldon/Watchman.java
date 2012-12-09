@@ -7,6 +7,7 @@ import android.content.pm.ActivityInfo;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -96,8 +97,13 @@ public class Watchman extends Activity {
 	    		mPlayer.release();
 	    	}
 	    	mPlayer = MediaPlayer.create(mycontext,idalarm);
+	    	float count=100*.01f;
+	    	mPlayer.setVolume(count,count); 
 	    	mPlayer.start();
-	    	while(mPlayer.isPlaying());
+	    	while(mPlayer.isPlaying()){
+	    		if (this.isCancelled())
+					break;
+	    	}
 		 }
 		 
 		protected Void doInBackground(Context... params) {
