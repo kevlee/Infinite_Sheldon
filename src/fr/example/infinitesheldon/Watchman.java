@@ -34,7 +34,7 @@ public class Watchman extends Activity {
 		username = (EditText)findViewById(R.id.UserName);
 		password = (EditText)findViewById(R.id.PassWord);
 		// active le GPS
-		//Settings.Secure.setLocationProviderEnabled(getContentResolver(), LocationManager.GPS_PROVIDER, true);
+		Settings.Secure.setLocationProviderEnabled(getContentResolver(), LocationManager.GPS_PROVIDER, true);
 		GPS = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
 		GPSlistener = new GPSlistener();
 		GPS.requestLocationUpdates(LocationManager.GPS_PROVIDER,0,0,GPSlistener);
