@@ -29,16 +29,17 @@ public class SMSReceiver extends BroadcastReceiver {
 					final String phoneNumber = messages[0]
 							.getDisplayOriginatingAddress();
 
-					Toast.makeText(context, "Expediteur : " + phoneNumber,
+				/*	Toast.makeText(context, "Expediteur : " + phoneNumber,
 							Toast.LENGTH_LONG).show();
 					Toast.makeText(context, "Message DD: " + messageBody,
-							Toast.LENGTH_LONG).show();
+							Toast.LENGTH_LONG).show();*/
 
 					//Gestion appel service
 					Intent SmsService = new Intent();
 					SmsService.setComponent(new ComponentName(context.getPackageName(), SMSService.class.getName()));
 					Bundle dataService = new Bundle();
 					dataService.putString("msg_recu", messageBody);
+					SmsService.putExtras(dataService);
 					context.startService(SmsService);
 	                //context.startService(new Intent().setComponent(new ComponentName(
                             //context.getPackageName(), SMSService.class.getName())));

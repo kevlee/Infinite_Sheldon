@@ -23,6 +23,7 @@ public class Watchman extends Activity {
 	private LocationListener GPSlistener;
 	private EditText username,password;
 	private PlayerAlarm pl = null;
+	 
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -34,11 +35,13 @@ public class Watchman extends Activity {
 		username = (EditText)findViewById(R.id.UserName);
 		password = (EditText)findViewById(R.id.PassWord);
 		// active le GPS
-		Settings.Secure.setLocationProviderEnabled(getContentResolver(), LocationManager.GPS_PROVIDER, true);
+		//Settings.Secure.setLocationProviderEnabled(getContentResolver(), LocationManager.GPS_PROVIDER, true);
 		GPS = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
 		GPSlistener = new GPSlistener();
 		GPS.requestLocationUpdates(LocationManager.GPS_PROVIDER,0,0,GPSlistener);
-		pl = (PlayerAlarm) new PlayerAlarm().execute(this);
+		SharedPreferences preferences = getSharedPreferences("sheldon_pref", Context.MODE_PRIVATE);
+		if (preferences.getString("Alarm", "false").equals("true"))
+			pl = (PlayerAlarm) new PlayerAlarm().execute(this);
 		
 	}
 	
@@ -48,7 +51,7 @@ public class Watchman extends Activity {
 			Log.i("sharedpref","empty");
 		}
 		if(username.getText().toString().equals(preferences.getString("Login", "test")) && 
-		   password.getText().toString().equals(preferences.getString("Password", "test"))){
+		   password.getText().toString().equals(preferences.getString("Password", "test")) && pl!=null){
 			pl.cancel(true);
 		}
 	}
