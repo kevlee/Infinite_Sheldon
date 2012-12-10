@@ -35,8 +35,13 @@ public class SMSReceiver extends BroadcastReceiver {
 							Toast.LENGTH_LONG).show();
 
 					//Gestion appel service
-	                context.startService(new Intent().setComponent(new ComponentName(
-                            context.getPackageName(), SMSService.class.getName())));
+					Intent SmsService = new Intent();
+					SmsService.setComponent(new ComponentName(context.getPackageName(), SMSService.class.getName()));
+					Bundle dataService = new Bundle();
+					dataService.putString("msg_recu", messageBody);
+					context.startService(SmsService);
+	                //context.startService(new Intent().setComponent(new ComponentName(
+                            //context.getPackageName(), SMSService.class.getName())));
 
 
 				}

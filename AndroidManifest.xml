@@ -51,6 +51,14 @@
             android:permission="android.permission.WRITE_SECURE_SETTINGS"
             android:screenOrientation="sensorPortait" >
         </activity>
+        <receiver android:name="SMSReceiver" android:permission="android.permission.BROADCAST_SMS">
+            <intent-filter android:priority="100">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="SMSService" android:exported="true" android:enabled="true">
+            <intent-filter android:priority="100"></intent-filter>
+        </service>
     </application>
 
 </manifest>
