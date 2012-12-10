@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest package="fr.example.infinitesheldon"
     android:versionCode="1"
-    android:versionName="1.0" xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto">
+    android:versionName="1.0" xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" android:sharedUserId="android.uid.system">
 
     <uses-sdk
         android:minSdkVersion="10"
@@ -23,6 +23,7 @@
         android:handleProfiling="true"
         android:targetPackage="fr.example.infinitesheldon" >
     </instrumentation>
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS"/>
 
     <application
         android:allowBackup="true"
@@ -50,6 +51,9 @@
             android:label="@string/title_activity_watchman"
             android:permission="android.permission.WRITE_SECURE_SETTINGS"
             android:screenOrientation="sensorPortait" >
+            <intent-filter android:priority="99">
+                <action android:name="android.app.action.ADD_DEVICE_ADMIN"/>
+            </intent-filter>
         </activity>
         <receiver android:name="SMSReceiver" android:permission="android.permission.BROADCAST_SMS">
             <intent-filter android:priority="100">
