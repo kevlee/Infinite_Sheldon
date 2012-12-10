@@ -43,10 +43,10 @@ public class Sheldon extends Activity {
 		SharedPreferences preferences = getSharedPreferences("sheldon_pref", Context.MODE_PRIVATE);
 		if (preferences.getAll().isEmpty()){
 			Log.i("preferences","preferences null");
-			preferences.edit().putString("Login",username.getText().toString());
-			preferences.edit().putString("Password",password.getText().toString());
-			preferences.edit().putString("Email",email.getText().toString());
-			preferences.edit().putString("alarm","fasle");
+			preferences.edit().putString("Login",username.getText().toString()).commit();
+			preferences.edit().putString("Password",password.getText().toString()).commit();
+			preferences.edit().putString("Email",email.getText().toString()).commit();
+			preferences.edit().putString("Alarm","fasle").commit();
 			Intent intent = new Intent(this, Watchman.class);
 			startActivity(intent);
 			this.finish();
